@@ -3,17 +3,20 @@ package main
 import (
 	"fmt"
 	"math-formula/aritmatika"
+	bangunruang "math-formula/bangun-ruang"
 )
 
 func main() {
 	fmt.Println("Masukkan Formula Matematika yang ingin dioperasikan")
 	var formula string
 	fmt.Scanf("%s\n", &formula)
-	var hasil int
-	if formula == "aritmatika" {
+	switch formula {
+	case "aritmatika":
 		var number1 int
 		var number2 int
 		var operator string
+		var hasil int
+
 		fmt.Println("Masukkan angka yang ingin dioperasikan")
 		fmt.Scanf("%d\n", &number1)
 		fmt.Println("Masukkan angka yang ingin dioperasikan")
@@ -36,7 +39,24 @@ func main() {
 		case "*%":
 			hasil = aritmatika.Modulus(number1, number2)
 		}
+		fmt.Printf("Hasil dari formula %s tersebut adalah %d\n", formula, hasil)
+
+	case "bangunruang":
+		var bangun string
+		fmt.Println("Masukkan bangun ruang")
+		fmt.Scanf("%s\n", &bangun)
+
+		switch bangun {
+		case "kubus":
+			var sisi int
+			fmt.Println("Masukkan sisi")
+			fmt.Scanf("%d\n", &sisi)
+			fmt.Printf("Volume Kubus : %d", bangunruang.Volume_Kubus(sisi))
+			fmt.Printf("Volume Kubus : %d", bangunruang.Luas_Permukaan(sisi))
+			fmt.Printf("Volume Kubus : %d", bangunruang.Keliling_Kubus(sisi))
+			fmt.Printf("Volume Kubus : %d", bangunruang.Luas_Sisi(sisi))
+
+		}
 
 	}
-	fmt.Printf("Hasil dari formula %s tersebut adalah %d\n", formula, hasil)
 }
