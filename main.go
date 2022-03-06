@@ -55,6 +55,12 @@ func main() {
 			fmt.Printf("Volume Kubus : %d", bangunruang.Luas_Permukaan(sisi))
 			fmt.Printf("Volume Kubus : %d", bangunruang.Keliling_Kubus(sisi))
 			fmt.Printf("Volume Kubus : %d", bangunruang.Luas_Sisi(sisi))
+		case "balok":
+			var p, l, t int
+			fmt.Scanf("%d %d %d\n", &p, &l, &t)
+			fmt.Printf("Volume Balok : %d", bangunruang.Volume_Balok(p, l, t))
+			fmt.Printf("Luas Permukaan Balok : %d", bangunruang.Luas_Permukaan_Balok(p, l, t))
+			fmt.Printf("Panjang Balok : %d", bangunruang.Panjang_Balok(p, l, t))
 
 		}
 
